@@ -18,9 +18,9 @@ spec:
       containers:
       - name: mysql
         image: mysql
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         env:
-        - name: MYSQL_ROOT_PASSWORD
+        - name: MYSQL_DATABASE_PASSWORD
           valueFrom:
             secretKeyRef:
               name: flaskapi-secrets

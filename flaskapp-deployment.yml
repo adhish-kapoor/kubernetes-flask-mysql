@@ -6,7 +6,7 @@ metadata:
   labels:
     app: flaskapi
 spec:
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
       app: flaskapi
@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
         - name: flaskapi
-          image: flask-api
-          imagePullPolicy: Never
+          image: adhishkapoor1607/flask-api
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
           env:
