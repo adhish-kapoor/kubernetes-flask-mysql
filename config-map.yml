@@ -3,10 +3,7 @@ kind: ConfigMap
 metadata:
   name: app-config
 data:
-  FLASK_APP: flaskapi.py
   MYSQL_DATABASE_USER: root
-  MYSQL_DATABASE_PASSWORD: admin
-  MYSQL_DATABASE_HOST: "localhost"
-  MYSQL_DATABASE_PORT: "3306"
-  MYSQL_DATABASE_DB: mysql
-  #FLASK_APP_PORT: "8282"
+  MYSQL_DATABASE_HOST: localhost
+  MYSQL_DATABASE_PORT: 3306
+  MYSQL_DATABASE_DB: flaskapi

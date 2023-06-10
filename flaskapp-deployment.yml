@@ -22,13 +22,31 @@ spec:
           ports:
             - containerPort: 5000
           env:
-            - name: db_root_password
+            - name: MYSQL_DATABASE_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: MYSQL_DATABASE_USER
+            - name: MYSQL_DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: flaskapi-secrets
                   key: db_root_password
-            - name: db_name
-              value: flaskapi
+            - name: MYSQL_DATABASE_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: MYSQL_DATABASE_HOST
+            - name: MYSQL_DATABASE_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: MYSQL_DATABASE_PORT
+            - name: MYSQL_DATABASE_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: MYSQL_DATABASE_DB
 
 ---
 apiVersion: v1
