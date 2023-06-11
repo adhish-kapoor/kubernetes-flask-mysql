@@ -25,7 +25,7 @@ def users():
     try:
         conn = mysql.connect()
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM users;")
+        cursor.execute("SELECT * FROM users")
         rows = cursor.fetchall()
         cursor.close()
         conn.close()
