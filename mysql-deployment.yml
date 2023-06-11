@@ -10,6 +10,8 @@ spec:
   selector:
     matchLabels:
       app: db
+  strategy:
+    type: Recreate    
   template:
     metadata:
       labels:
@@ -51,4 +53,4 @@ spec:
     name: mysql
   selector:
     app: db
-  type: NodePort
+  type: ClusterIP
