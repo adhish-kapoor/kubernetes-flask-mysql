@@ -4,6 +4,6 @@ metadata:
   name: app-config
 data:
   MYSQL_DATABASE_USER: root
-  MYSQL_DATABASE_HOST: "localhost"
+  MYSQL_DATABASE_HOST: "10.48.14.30"
   MYSQL_DATABASE_PORT: "3306"
   MYSQL_DATABASE_DB: flaskapi
