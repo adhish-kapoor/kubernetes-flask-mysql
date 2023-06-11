@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: mysql
   labels:
-    app: mysql
+    app: db
 spec:
   replicas: 1
   selector:
@@ -15,7 +15,7 @@ spec:
   template:
     metadata:
       labels:
-        app: mysql
+        app: db
     spec:
       containers:
       - name: mysql
@@ -29,7 +29,7 @@ spec:
               key: db_root_password
         ports:
         - containerPort: 3306
-          name: mysql
+          name: db-container
         volumeMounts:
           - name: mysql-persistent-storage
             mountPath: /var/lib/mysql
@@ -45,12 +45,12 @@ kind: Service
 metadata:
   name: mysql
   labels:
-    app: mysql
+    app: db
 spec:
   ports:
   - port: 3306
     protocol: TCP
     name: mysql
   selector:
-    app: mysql
+    app: db
   type: ClusterIP
